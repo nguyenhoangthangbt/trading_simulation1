@@ -1,0 +1,17 @@
+# Ignore local virtual environment
+venv/
+
+# Ignore compiled python files
+*.pyc
+
+# Ignore data files
+data/
+
+# Ignore uploads
+uploads/
+
+# Ignore any generated files or build artifacts
+__pycache__/
+*.egg-info/
+build/
+dist/

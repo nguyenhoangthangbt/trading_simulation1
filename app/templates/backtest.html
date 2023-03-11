@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Backtest Results</h1>
+
+
+<!-- Add the Highcharts script tags -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+
+<table>
+  <tr>
+    <th>Total P&amp;L:</th>
+    <td>{{ total_pnl }}</td>
+  </tr>
+  <tr>
+    <th>Total Trades:</th>
+    <td>{{ total_trades }}</td>
+  </tr>
+  <tr>
+    <th>Win Rate:</th>
+    <td>{{ win_rate }}</td>
+  </tr>
+  <tr>
+    <th>Avg. Win:</th>
+    <td>{{ avg_win }}</td>
+  </tr>
+  <tr>
+    <th>Avg. Loss:</th>
+    <td>{{ avg_loss }}</td>
+  </tr>
+  <tr>
+    <th>Max Drawdown:</th>
+    <td>{{ max_drawdown }}</td>
+  </tr>
+  <tr>
+    <th>Sharpe Ratio:</th>
+    <td>{{ sharpe_ratio }}</td>
+  </tr>
+</table>
+
+<div id="chart"></div>
+<!-- Add the chart code -->
+<script>
+  var pnlData = {{pnl_data|tojson}};
+  var chart = new Highcharts.chart('chart', {
+    title: { text: 'P&amp;L Chart' },
+    series: [{ data: pnlData }],
+  });
+
+</script>
+
+{% endblock %}
