@@ -8,3 +8,4 @@ pandas
 ta-lib
 WTForms==3.0.0
 SQLAlchemy==1.4.22
+matplotlib
