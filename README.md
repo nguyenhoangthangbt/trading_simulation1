@@ -85,3 +85,4 @@ trading_simulation/
 ├── README.md
 └── .gitignore
 ``
+To config on AWS EC2 for the web server at port 5000, turn on all TCP with all ports in the Security Group. Assign this security group to the EC2. It works as a web server
